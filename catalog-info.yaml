@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cpqtniv4u-java-quarkus-gitops
+  description: This is GitOps manifest for cpqtniv4u-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: cpqtniv4u-java-quarkus
+    janus-idp.io/tekton: cpqtniv4u-java-quarkus 
+    backstage.io/kubernetes-id: cpqtniv4u-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cpqtniv4u-java-quarkus
